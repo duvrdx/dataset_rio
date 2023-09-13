@@ -21,9 +21,9 @@ def parse(file):
         data_hora = dados.find('DataHora').text.strip()
         data.append(data_hora.split()[0])
         hora.append(data_hora.split()[1])
-        vazao.append(dados.find('VazaoFinal').text)
-        nivel.append(dados.find('NivelFinal').text)
-        chuva.append(dados.find('ChuvaFinal').text)
+        vazao.append(dados.find('Vazao').text)
+        nivel.append(dados.find('Nivel').text)
+        chuva.append(dados.find('Chuva').text)
 
     # Crie um DataFrame pandas com os dados extraídos
     df = pd.DataFrame({
@@ -38,7 +38,7 @@ def parse(file):
 
 # Imprima o DataFrame resultante
 if __name__ == "__main__":
-    files = ["response.xml"]
+    files = ["files/57562000.xml"]
 
 
     for file in files:
